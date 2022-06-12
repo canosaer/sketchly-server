@@ -19,6 +19,14 @@ app.use(express.static('sketchly-client'))
 app.use(express.json())
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.get('/favicon.ico', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.post('/games', async (req, res) => {
 
   let game = new GameModel({
