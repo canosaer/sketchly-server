@@ -1,0 +1,44 @@
+type Game{
+    name: String!
+    nameLower: String!
+    accessedBy: [String]
+    contributorNames: [String]
+    turn: Int!
+    phrases: [String]
+    active: Boolean!
+    password: String
+    flagged: Boolean
+    lastUpdated: Int
+    lastTurn: Int
+}
+
+type Phrase{
+    content: String!
+    available: Boolean!
+}
+
+type ImageSet{
+    images: [String]
+    game: String!
+}
+
+type Query{
+    allGames: [Game]
+    allPhrases: [Phrase]
+    allImageSets: [ImageSet]
+}
+
+mutation {
+	deleteGame(id:334466106786841169) {
+    name
+  }
+}
+
+query{
+  allGames{
+    data{
+      name
+      _id
+    }
+  }
+}
